@@ -53,7 +53,6 @@ CREATE TABLE `user`  (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'admin', 'admin');
-INSERT INTO `user` VALUES (2, 'admin1', 'admin');
-INSERT INTO `user` VALUES (4, 'admin2', 'admin');
+INSERT INTO `user` VALUES (2, 'user', 'user');
 
 SET FOREIGN_KEY_CHECKS = 1;
