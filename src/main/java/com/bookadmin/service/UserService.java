@@ -31,4 +31,16 @@ public interface UserService {
      * @return
      */
     List<UserVo> selectAllUser();
+
+    /**
+     * 修改用户
+     * @param po
+     */
+    void updateUser(User po);
+
+    /**
+     * 删除用户
+     * @param po
+     */
+    void deleteUser(User po);
 }

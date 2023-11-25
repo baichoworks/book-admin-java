@@ -34,4 +34,15 @@ public class UserServiceImpl implements UserService {
     public List<UserVo> selectAllUser() {
         return userMapper.selectAllUser();
     }
+
+    @Override
+    public void updateUser(User po) {
+        userMapper.updateUser(po);
+    }
+
+    @Override
+    public void deleteUser(User po) {
+        userMapper.deleteUser(po);
+    }
+
 }

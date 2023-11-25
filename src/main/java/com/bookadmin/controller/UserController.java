@@ -85,4 +85,23 @@ public class UserController {
         return Result.getInstance()
                 .setData(userList);
     }
+
+    /**
+     * 修改用户
+     * @param vo
+     * @return
+     */
+    @PostMapping("/updateUser")
+    public Result updateUser(@RequestBody User vo){
+        userService.updateUser(vo);
+        return Result.getInstance()
+                .setMessage("修改成功");
+    }
+
+    @PostMapping("deleteUser")
+    public Result deleteUser(@RequestBody User vo){
+        userService.deleteUser(vo);
+        return Result.getInstance()
+                .setMessage("删除成功");
+    }
 }
