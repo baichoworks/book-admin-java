@@ -93,6 +93,13 @@ public class UserController {
      */
     @PostMapping("/updateUser")
     public Result updateUser(@RequestBody User vo){
+        // 判断用户信息是否存在
+        User user = userService.getByUserName(vo.getUsername());
+        if (user != null) {
+            return Result.getInstance()
+                    .setSuccess(false)
+                    .setMessage("账号已存在");
+        }
         userService.updateUser(vo);
         return Result.getInstance()
                 .setMessage("修改成功");
