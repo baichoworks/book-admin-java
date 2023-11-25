@@ -41,7 +41,7 @@ public interface UserMapper {
 
     /**
      * 删除用户
-     * @param po
+     * @param id
      */
-    void deleteUser(User po);
+    void deleteUser(Integer id);
 }

@@ -100,7 +100,7 @@ public class UserController {
 
     @PostMapping("deleteUser")
     public Result deleteUser(@RequestBody User vo){
-        userService.deleteUser(vo);
+        userService.deleteUser(vo.getId());
         return Result.getInstance()
                 .setMessage("删除成功");
     }
