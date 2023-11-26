@@ -6,12 +6,12 @@
     </select>
 
     <insert id="addBook">
-        insert into book(bname,bauthor,bpublisher,bcount,available)
-        values (#{bName},#{bAuthor},#{bPublisher},#{bCount},#{available})
+        insert into book(bname,bauthor,bpublisher,available)
+        values (#{bName},#{bAuthor},#{bPublisher},#{available})
     </insert>
 
     <update id="updateBook">
-        update book set bname = #{bName},bauthor = #{bAuthor},bpublisher = #{bPublisher},bcount = #{bCount},available = #{available}
+        update book set bname = #{bName},bauthor = #{bAuthor},bpublisher = #{bPublisher},available = #{available}
         where id = #{id}
     </update>
 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bookadmin.mapper.OrderBookMapper">
+    <select id="selectAvailableBook" resultType="com.bookadmin.entity.po.Book">
+        select * from book
+        where available > 0
+    </select>
+
+    <select id="selectOrderBookByUser" resultType="com.bookadmin.entity.vo.OrderBook">
+        select user_book.id as id,bname, bauthor, bpublisher
+        from user
+        inner join user_book on user.id = user_book.uid
+        inner join book on user_book.bid = book.id
+        where user.id = #{id}
+        order by bname
+    </select>
+
+    <insert id="addOrderBookWithUser">
+        insert into user_book(uid,bid) values (#{uid},#{bid})
+    </insert>
+
+    <delete id="deleteOrderBook">
+        delete from user_book
+        where id = #{id}
+    </delete>
+</mapper>
