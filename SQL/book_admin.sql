@@ -1,5 +1,7 @@
 /*
  Navicat Premium Data Transfer
+
+ Source Server         : Local
  Source Server Type    : MySQL
  Source Server Version : 80032 (8.0.32)
  Source Host           : localhost:3306
@@ -9,7 +11,7 @@
  Target Server Version : 80032 (8.0.32)
  File Encoding         : 65001
 
- Date: 26/11/2023 03:29:47
+ Date: 26/11/2023 08:05:52
 */
 
 SET NAMES utf8mb4;
@@ -46,13 +48,14 @@ CREATE TABLE `user`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `role` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT 'user',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'admin', 'admin');
-INSERT INTO `user` VALUES (2, 'user', 'user');
+INSERT INTO `user` VALUES (1, 'admin', 'admin', 'admin');
+INSERT INTO `user` VALUES (2, 'user', 'user', 'user');
 
 SET FOREIGN_KEY_CHECKS = 1;

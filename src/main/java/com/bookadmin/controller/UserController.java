@@ -39,6 +39,7 @@ public class UserController {
         UserVo userVo = new UserVo();
         userVo.setId(user.getId());
         userVo.setUsername(user.getUsername());
+        userVo.setRole(user.getRole());
         return Result.getInstance()
                 .setMessage("登录成功")
                 .setData(userVo);

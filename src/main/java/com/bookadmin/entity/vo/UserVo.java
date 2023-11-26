@@ -7,4 +7,5 @@ import lombok.experimental.Accessors;
 public class UserVo {
     private Integer id;
     private String username;
+    private String role;
 }
